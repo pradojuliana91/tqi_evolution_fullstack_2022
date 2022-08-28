@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "ee7aac38-3c2a-4d3e-849f-b555f77318bd",
+		"name": "book-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2875825"
+	},
+	"item": [
+		{
+			"name": "Create book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Qualidade de software",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "100",
+							"type": "default"
+						},
+						{
+							"key": "author_code",
+							"value": "61E9F220-97E3-4098-AD0B-17506BDCE6F8",
+							"type": "default"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/tqi_tnunes/Pictures/Screenshot from 2022-06-07 09-58-28.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/9C0772E7-DA8B-4BE0-A035-3C900BF2301D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"9C0772E7-DA8B-4BE0-A035-3C900BF2301D"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Price update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 999\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/9C0772E7-DA8B-4BE0-A035-3C900BF2301D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"9C0772E7-DA8B-4BE0-A035-3C900BF2301D"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Número 1",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "777",
+							"type": "default"
+						},
+						{
+							"key": "authorCode",
+							"value": "6B68EF3C-DE9C-11EC-9D64-0242AC120002",
+							"type": "default"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/thiago/Imagens/Captura de tela de 2022-05-21 19-50-58.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/9C0772E7-DA8B-4BE0-A035-3C900BF2301D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"9C0772E7-DA8B-4BE0-A035-3C900BF2301D"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve book list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dXNlcjo0YTRlYzBiZi02MzM5LTQzNTMtYmZkZi0zYjdjNzEwNGJhZDg=",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/books?page=0&size=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve authors list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/authors",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/F27ED20E-5156-4875-89A8-819CB00D4089",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"F27ED20E-5156-4875-89A8-819CB00D4089"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "vempratqi",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "bootcamp",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
